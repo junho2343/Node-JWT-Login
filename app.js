@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
     res.send('Hello JWT')
 })
 
-app.use('/api', require('./router/api'));
+app.use('/api', require("./routes/api"));
 
 // open the server
 app.listen(port, () => {
