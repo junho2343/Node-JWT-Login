@@ -27,19 +27,21 @@ app.use(morgan('dev'))
 // set the secret key variable for jwt
 app.set('jwt-secret', config.secret)
 
-// index page, just for testing
-app.get('/', (req, res) => {
-    res.send('Hello JWT')
-})
+// set view template
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+//app.engine('html', require('ejs').renderFile);
 
-app.use('/api', require("./routes/api"));
+
+
 
 // open the server
 app.listen(port, () => {
     console.log(`Express is running on port ${port}`)
 })
 
-
+// routers
+require('./routes/main')(app);
 
 /* =======================
     CONNECT TO MONGODB SERVER
