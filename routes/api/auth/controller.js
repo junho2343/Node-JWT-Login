@@ -14,7 +14,7 @@ exports.token = (req, res) => {
     res.send(key)
     
     res.send('this router is working')
-res.json({a:12});
+
     // jwt.sign({
     //     key: key
     // }, secret, (err, token) => {
