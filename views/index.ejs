@@ -7,10 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/api/auth/token" method="post">
-        <p>jwt 토큰 발행</p>
-        <input type="test" name="key">
-        <input type="submit">
-    </form>
+    
+    <p>토큰 발급 : POST localhost:3000/api/auth/token?key={your_key}</p>
+    <p>토큰 체크 : POST localhost:3000/api/auth/check?token={your_token}</p>
+    
+    <% for (let value of getData()) { %>
+        <%- value %>
+    <% } %>
 </body>
 </html>
